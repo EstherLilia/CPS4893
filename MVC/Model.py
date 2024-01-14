@@ -26,6 +26,8 @@ class GameEngine(object):
         self.add_button_path = "Resources/Images/Buttons_add.png"
         self.minus_button_path = "Resources/Images/Buttons_minus.png"
         self.bun_sprite_path = "Resources/Images/Bun/"
+        self.ball_path = "Resources/Images/Ball_Images/"
+        self.ball_time = 0.6
         self.bun_sprite_time = 0.6
 
 

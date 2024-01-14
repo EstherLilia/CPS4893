@@ -6,6 +6,7 @@ import pygame.freetype
 import cv2
 from Components.Button.Button import button
 from Components.Sprite_Engine.Sprite import sprite_engine
+from Components.Ball.Ball import Ball_Engine
 
 class UI_View(object):
     def __init__(self, evManager, model):
@@ -46,7 +47,8 @@ class UI_View(object):
         self.model.add_button = button((100, 150), self.model.add_button_path, self.model, 2)
         self.model.minus_button = button((100, 250), self.model.minus_button_path, self.model, 2)
         
-        self.model.bun_sprite = sprite_engine(self.model.bun_sprite_path, (100, 400), 6, self.model)
+        #self.model.bun_sprite = sprite_engine(self.model.bun_sprite_path, (100, 400), 6, self.model)
+        self.model.ball = Ball_Engine(self.model.ball_path, (100, 400), 24, self.model, 0.4)
 
     def render(self):
         # Display FPS
@@ -103,8 +105,8 @@ class UI_View(object):
         self.model.add_button.draw(self.model.screen)
         self.model.minus_button.draw(self.model.screen)
 
-        # Draw sprite
-        self.model.bun_sprite.draw(self.model.bun_sprite_time)
+        # Draw ball
+        self.model.ball.draw(self.model.ball_time)
 
         # Update the screen
         pygame.display.flip()
